@@ -38,7 +38,6 @@ const goalScored = async (player, rlName, tmpdir) => {
   const imgPath = path.join(tmpdir, 'cropped.png')
   crop(Buffer.from(img, 'base64'), imgPath);
   const text = await readImgText(imgPath);
-  console.log(text)
 
   if (scoredMatches.some(match => text.toLowerCase().includes(match))) {
     if (rlNameMatch(rlName.toLowerCase(), text.toLowerCase())) {
@@ -69,17 +68,17 @@ const worker = createWorker({
   errorHandler: e => console.error(e)
 });
 
-// (async () => {
-//   await worker.load();
-//   await worker.loadLanguage('eng');
-//   await worker.initialize('eng');
-// })();
+(async () => {
+  await worker.load();
+  await worker.loadLanguage('eng');
+  await worker.initialize('eng');
+})();
 
 const readImgText = async (img) => {
   try {
-    await worker.load();
-    await worker.loadLanguage('eng');
-    await worker.initialize('eng');
+    // await worker.load();
+    // await worker.loadLanguage('eng');
+    // await worker.initialize('eng');
     const { data: { text } } = await worker.recognize(img)
     return text
   } catch (err) {
