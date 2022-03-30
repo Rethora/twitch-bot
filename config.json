@@ -1,0 +1,17 @@
+{
+  "botName": "yourneighborlybot",
+  "channel": "rolos6",
+  "enableCommands": true,
+  "sayHiOnJoin": false,
+  "roastOnMessage": false,
+  "rocketLeagueName": "Qush",
+  "playerRefresh": 27000000,
+  "screenShotWait": 1700,
+  "pageLoadWait": 10000,
+  "streamerPlatform": "xbox",
+  "platformName": "qush6",
+  "roastOnScore": false,
+  "complimentOnScore": true,
+  "roastOnScoredOn": true,
+  "complimentOnScoredOn": false
+}
